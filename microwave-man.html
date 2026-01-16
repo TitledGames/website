@@ -300,13 +300,14 @@
 
         <!-- Flathub Recommendation Section -->
         <div class="flathub-highlight">
-            <h2>🐧 Linux Users: Get it on Flathub<span class="highlight-badge">RECOMMENDED</span></h2>
+            <h2>Linux Users: Get it on Flathub<span class="highlight-badge">RECOMMENDED</span></h2>
             <p><strong>Automatic updates included!</strong></p>
             <p>For the best experience on Linux, we recommend downloading from Flathub. You'll automatically receive updates when new versions are released.</p>
-            <div style="text-align: center; margin-top: var(--spacing-md);">
-                <a href="https://flathub.org/apps/org.titledgames.microwaveman" target="_blank" class="btn btn-primary">
-                    Download on Flathub
+            <div style="text-align: center;">
+                <a href="https://flathub.org/en/apps/dev.project516.titledgames.microwave-man" target="_blank" style="display: block; margin: var(--spacing-md);">
+                    <img src="https://dl.flathub.org/media/dev/project516/titledgames.microwave-man/08e6c4056a602f872b878eaff010d953/screenshots/image-1_orig.webp" alt="Download on Flathub" style="width: 100%; height: auto; max-width: none;">
                 </a>
+                <p><a href="https://flathub.org/en/apps/dev.project516.titledgames.microwave-man" target="_blank" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Download on Flathub</a></p>
             </div>
         </div>
 
@@ -314,11 +315,16 @@
         <div class="game-player">
             <h2>Play Now (Web Version)</h2>
             <div class="warning-box">
-                <p><strong>⚠️ Note:</strong> The web version is currently unstable and may not work properly in all browsers. For the best experience, please download the desktop version above.</p>
+                <p><strong>Note:</strong> The web version is currently unstable and may not work properly in all browsers. For the best experience, please download the desktop version above.</p>
             </div>
             <div class="game-embed" style="margin-top: var(--spacing-md);">
                 <iframe frameborder="0" src="https://titledgames.github.io/Microwave-Man/" allowfullscreen="" width="640" height="380"><a href="https://titledgames.github.io/Microwave-Man/">Play Microwave-Man!</a></iframe>
             </div>
+        </div>
+
+        <!-- Game Widget -->
+        <div class="game-widget">
+            <iframe frameborder="0" src="https://itch.io/embed/4085345?linkback=true&amp;bg_color=dcdada&amp;fg_color=222222&amp;link_color=efb945&amp;border_color=b0aeae" width="552" height="167"><a href="https://project516.itch.io/microwave-man">Microwave-Man! by Project516, Titled Games</a></iframe>
         </div>
 
         
@@ -377,12 +383,12 @@
                 } else {
                     // Fallback if no release found
                     console.log('No non-prerelease version found, using fallback');
-                    updateDownloadSection('v1.1.0');
+                    updateDownloadSection('1.0.0');
                 }
             } catch (error) {
                 console.error('Error fetching releases from GitHub API:', error.message);
                 // Fallback to hardcoded version - download links will still work
-                updateDownloadSection('v1.1.0');
+                updateDownloadSection('1.0.0');
             }
         }
         
@@ -400,27 +406,27 @@
                 
                 const links = [
                     {
-                        icon: '🪟',
+                        icon: '',
                         text: 'Windows',
                         file: 'Microwave-Man-Windows.exe'
                     },
                     {
-                        icon: '🍎',
+                        icon: '',
                         text: 'macOS',
                         file: 'Microwave-Man-MacOS.zip'
                     },
                     {
-                        icon: '🐧',
+                        icon: '',
                         text: 'Linux',
                         file: 'Microwave-Man-Linux.x86_64'
                     },
                     {
-                        icon: '🌐',
+                        icon: '',
                         text: 'Web',
                         file: 'Microwave-Man-Web.zip'
                     },
                     {
-                        icon: '📦',
+                        icon: '',
                         text: 'PCK Data',
                         file: 'Microwave-Man.pck'
                     }
@@ -437,14 +443,16 @@
                     a.target = '_blank';
                     a.rel = 'noopener noreferrer';
                     
-                    const iconSpan = document.createElement('span');
-                    iconSpan.className = 'icon';
-                    iconSpan.textContent = link.icon;
+                    if (link.icon) {
+                        const iconSpan = document.createElement('span');
+                        iconSpan.className = 'icon';
+                        iconSpan.textContent = link.icon;
+                        a.appendChild(iconSpan);
+                    }
                     
                     const textSpan = document.createElement('span');
                     textSpan.textContent = link.text;
                     
-                    a.appendChild(iconSpan);
                     a.appendChild(textSpan);
                     downloadLinks.appendChild(a);
                 });
