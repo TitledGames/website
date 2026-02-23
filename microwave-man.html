@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Microwave-Man! - A platformer game about a Microwave Robot ascending the map to reach the top while collecting items to microwave.">
+    <meta name="keywords" content="Microwave-Man, platformer game, indie game, Titled Games, Project516">
+    <meta name="author" content="Titled Games, Project516">
+    <meta property="og:title" content="Microwave-Man! | Titled Games">
+    <meta property="og:description" content="A platformer game about a Microwave Robot ascending the map to reach the top while collecting items to microwave.">
+    <meta property="og:url" content="https://titledgames.project516.dev/microwave-man">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Microwave-Man! | Titled Games">
+    <meta name="twitter:description" content="A platformer game about a Microwave Robot ascending the map to reach the top while collecting items to microwave.">
+    <title>Microwave-Man! | Titled Games</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to game page */
+        .game-page-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--dark-secondary);
+            padding-top: 80px;
+        }
+        
+        .game-page-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-lg) var(--spacing-md);
+        }
+        
+        .game-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--light-text);
+            margin-bottom: var(--spacing-sm);
+            text-align: center;
+        }
+        
+        .game-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-text);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .game-player {
+            background: var(--dark-bg);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .game-player h2 {
+            color: var(--light-text);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+        
+        .game-embed {
+            display: flex;
+            justify-content: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .game-embed iframe {
+            max-width: 100%;
+            border-radius: var(--radius-md);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .game-widget {
+            display: flex;
+            justify-content: center;
+            margin-top: var(--spacing-lg);
+        }
+        
+        .game-widget iframe {
+            max-width: 100%;
+            border-radius: var(--radius-md);
+        }
+        
+        .game-description {
+            background: var(--dark-secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .game-description h2 {
+            color: var(--light-text);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .game-description p {
+            color: var(--gray-text);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .download-section {
+            background: var(--dark-secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .download-section h2 {
+            color: var(--light-text);
+            margin-bottom: var(--spacing-sm);
+            text-align: center;
+        }
+        
+        .version-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            margin-left: var(--spacing-xs);
+        }
+        
+        .download-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .download-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: var(--dark-accent);
+            border: 2px solid var(--primary-color);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-speed) ease;
+            text-align: center;
+            font-weight: 600;
+            color: var(--light-text);
+        }
+        
+        .download-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 153, 102, 0.4);
+        }
+        
+        .download-link .icon {
+            margin-right: var(--spacing-xs);
+            font-size: 1.2rem;
+        }
+        
+        .warning-box {
+            background: rgba(255, 153, 102, 0.1);
+            border: 2px solid var(--primary-color);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .warning-box p {
+            color: var(--light-text);
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .flathub-highlight {
+            background: linear-gradient(135deg, rgba(255, 153, 102, 0.15) 0%, rgba(255, 153, 102, 0.05) 100%);
+            border: 3px solid var(--primary-color);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .flathub-highlight h2 {
+            color: var(--light-text);
+            margin-bottom: var(--spacing-sm);
+            text-align: center;
+        }
+        
+        .flathub-highlight .highlight-badge {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: var(--spacing-xs);
+        }
+        
+        .flathub-highlight p {
+            color: var(--gray-text);
+            text-align: center;
+            font-size: 1.1rem;
+            margin: var(--spacing-sm) 0;
+        }
+        
+        .flathub-highlight strong {
+            color: var(--light-text);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .game-page-content {
+                padding: var(--spacing-md) var(--spacing-sm);
+            }
+            
+            .game-embed iframe {
+                width: 100% !important;
+                height: auto !important;
+                aspect-ratio: 640/380;
+            }
+            
+            .game-widget iframe {
+                width: 100% !important;
+                height: auto !important;
+                aspect-ratio: 552/167;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon"><img id="logoImage" src="assets/logos/light.png" width="50" height="50" alt="Titled Games Logo"></span>
+                    Titled Games
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#games" class="nav-link">Games</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><button id="darkModeToggle" class="nav-link dark-mode-toggle">
+                    <span id="darkModeIcon">🌙</span>
+                </button></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Game Page Content -->
+    <div class="game-page-hero">
+        <div class="game-page-content">
+            <a href="index.html#games" class="back-link">← Back to Games</a>
+            <h1 class="game-title">Microwave-Man!</h1>
+            <p class="game-subtitle">Play as a microwave!</p>
+        </div>
+    </div>
+
+    <div class="game-page-content">
+        <!-- Game Description -->
+        <div class="game-description">
+            <h2>About the Game</h2>
+            <p>Microwave-Man! is a platformer game about a Microwave Robot ascending the map to reach the top while collecting items to microwave.</p>
+            <p>Navigate through challenging levels, collect items, and help Microwave-Man reach new heights in this exciting adventure!</p>
+        </div>
+
+        <!-- Download Section -->
+        <div class="download-section">
+            <h2>Download Microwave Man<span class="version-badge" id="versionBadge">Loading...</span></h2>
+            <p style="text-align: center; color: var(--gray-text); margin-top: var(--spacing-sm);">Get the latest version from GitHub Releases</p>
+            <div class="download-links" id="downloadLinks">
+                <!-- Download links will be populated by JavaScript -->
+                <div style="grid-column: 1 / -1; text-align: center; padding: var(--spacing-md); color: var(--gray-text);">
+                    Loading download links...
+                </div>
+            </div>
+        </div>
+
+        <!-- Flathub Recommendation Section -->
+        <div class="flathub-highlight">
+            <h2>Linux Users: Get it on Flathub<span class="highlight-badge">RECOMMENDED</span></h2>
+            <p>For the best experience on Linux, we recommend downloading from Flathub. You'll automatically receive updates when new versions are released.</p>
+            <div style="text-align: center;">
+                <a href="https://flathub.org/en/apps/dev.project516.titledgames.microwave-man" target="_blank" style="display: block; margin: var(--spacing-md);">
+                    <img src="https://dl.flathub.org/media/dev/project516/titledgames.microwave-man/08e6c4056a602f872b878eaff010d953/screenshots/image-1_orig.webp" alt="Download on Flathub" style="width: 100%; height: auto; max-width: none;">
+                </a>
+                <p><a href="https://flathub.org/en/apps/dev.project516.titledgames.microwave-man" target="_blank" style="color: var(--primary-color); font-weight: 600; text-decoration: none;">Download on Flathub</a></p>
+            </div>
+        </div>
+
+        <!-- Game Player Section -->
+        <div class="game-player">
+            <h2>Play Now (Web Version)</h2>
+            <div class="warning-box">
+                <p><strong>Note:</strong> The web version is currently unstable and may not work properly in all browsers. For the best experience, please download the desktop version above.</p>
+            </div>
+            <div class="game-embed" style="margin-top: var(--spacing-md);">
+                <iframe frameborder="0" src="https://titledgames.github.io/Microwave-Man/" allowfullscreen="" width="800" height="500"><a href="https://titledgames.github.io/Microwave-Man/">Play Microwave-Man!</a></iframe>
+            </div>
+        </div>
+
+        <!-- Game Widget -->
+        <div class="game-widget">
+            <iframe frameborder="0" src="https://itch.io/embed/4085345?linkback=true&amp;bg_color=dcdada&amp;fg_color=222222&amp;link_color=efb945&amp;border_color=b0aeae" width="552" height="167"><a href="https://project516.itch.io/microwave-man">Microwave-Man! by Project516, Titled Games</a></iframe>
+        </div>
+
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo">
+                        <span class="logo-icon"><img id="footerLogoImage" src="assets/logos/light.png" width="50" height="50" alt="Titled Games Logo"></span>
+                        Titled Games
+                    </span>
+                    <p>We do games</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#games">Games</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Titled Games. All rights reserved.</p>
+                <p>
+                    <a href="https://github.com/titledgames" target="_blank">github.com/titledgames</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Fetch latest Microwave Man release from GitHub
+        async function fetchLatestRelease() {
+            try {
+                const response = await fetch('https://api.github.com/repos/TitledGames/Microwave-Man/releases');
+                
+                if (!response.ok) {
+                    throw new Error(`GitHub API returned ${response.status}`);
+                }
+                
+                const releases = await response.json();
+                
+                // Find the latest non-prerelease version
+                const latestRelease = releases.find(release => !release.prerelease);
+                
+                if (latestRelease) {
+                    const version = latestRelease.tag_name;
+                    updateDownloadSection(version);
+                } else {
+                    // Fallback if no release found
+                    console.log('No non-prerelease version found, using fallback');
+                    updateDownloadSection('1.0.0');
+                }
+            } catch (error) {
+                console.error('Error fetching releases from GitHub API:', error.message);
+                // Fallback to hardcoded version - download links will still work
+                updateDownloadSection('1.0.0');
+            }
+        }
+        
+        function updateDownloadSection(version) {
+            // Update version badge
+            const versionBadge = document.getElementById('versionBadge');
+            if (versionBadge) {
+                versionBadge.textContent = version;
+            }
+            
+            // Create download links
+            const downloadLinks = document.getElementById('downloadLinks');
+            if (downloadLinks) {
+                const baseUrl = `https://github.com/TitledGames/Microwave-Man/releases/download/${version}`;
+                
+                const links = [
+                    {
+                        icon: '',
+                        text: 'Windows',
+                        file: 'Microwave-Man-Windows.zip'
+                    },
+                    {
+                        icon: '',
+                        text: 'macOS',
+                        file: 'Microwave-Man-MacOS.zip'
+                    },
+                    {
+                        icon: '',
+                        text: 'Linux',
+                        file: 'Microwave-Man-Linux.zip'
+                    },
+                    {
+                        icon: '',
+                        text: 'Web',
+                        file: 'Microwave-Man-Web.zip'
+                    },
+                    {
+                        icon: '',
+                        text: 'PCK Data',
+                        file: 'Microwave-Man.pck'
+                    }
+                ];
+                
+                // Clear existing content
+                downloadLinks.innerHTML = '';
+                
+                // Use safer DOM manipulation to create links
+                links.forEach(link => {
+                    const a = document.createElement('a');
+                    a.href = `${baseUrl}/${link.file}`;
+                    a.className = 'download-link';
+                    a.target = '_blank';
+                    a.rel = 'noopener noreferrer';
+                    
+                    if (link.icon) {
+                        const iconSpan = document.createElement('span');
+                        iconSpan.className = 'icon';
+                        iconSpan.textContent = link.icon;
+                        a.appendChild(iconSpan);
+                    }
+                    
+                    const textSpan = document.createElement('span');
+                    textSpan.textContent = link.text;
+                    
+                    a.appendChild(textSpan);
+                    downloadLinks.appendChild(a);
+                });
+            }
+        }
+        
+        // Fetch release info when page loads
+        document.addEventListener('DOMContentLoaded', fetchLatestRelease);
+    </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Titled Games - We do games. Indie game development studio creating innovative gaming experiences including Microwave-Man and more.">
+    <meta name="keywords" content="games, gaming, game development, titled games, indie games, microwave-man, platformer games">
+    <meta name="author" content="Titled Games">
+    <meta property="og:title" content="Titled Games | We do games">
+    <meta property="og:description" content="Indie game development studio creating innovative gaming experiences.">
+    <meta property="og:url" content="https://titledgames.project516.dev">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Titled Games | We do games">
+    <meta name="twitter:description" content="Indie game development studio creating innovative gaming experiences.">
+    <link rel="canonical" href="https://titledgames.project516.dev">
+    <title>Titled Games | We do games</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 
+        NAVIGATION SECTION
+        - Fixed navigation bar that stays at the top
+        - Contains logo and navigation links
+        - Responsive design for mobile devices
+    -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo">
+                    <span class="logo-icon">
+                    <img id="logoImage" src="assets/logos/light.png" width="50" height="50" alt="Titled Games Logo"></span>
+                    Titled Games
+                </span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#games" class="nav-link">Games</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><button id="darkModeToggle" class="nav-link dark-mode-toggle">
+                    <span id="darkModeIcon">🌙</span>
+                </button></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 
+        HERO SECTION
+        - Main landing section with animated background
+        - Contains company motto and call-to-action
+        - Particles animation creates dynamic effect
+    -->
+    <section id="home" class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-logo hero-logo-image">
+                <img id="heroLogoImage" src="assets/logos/light.png" width="50" height="50" alt="Titled Games Logo">
+            </div>
+            <h1 class="glitch" data-text="Titled Games">Titled Games</h1>
+            <p class="tagline">We do games</p>
+            <p class="subtitle">Creating exciting gaming experiences!</p>
+            <div class="cta-buttons">
+                <a href="#games" class="btn btn-primary">Explore Our Games</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        ABOUT SECTION
+        - Company mission and vision
+        - Key values and what makes us unique
+        - Animated on scroll
+    -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">We are Titled Games, a group of indie game developers dedicated to creating fun, entertaining, and enjoyable games.</p>
+                    <p>We believe in putting users first, and creating fun experiences for all people.</p>
+                    <div class="values">
+                        <div class="value-item">
+                            <h3>Creativity</h3>
+                            <p>Unique art styles and storytelling</p>
+                        </div>
+                        <div class="value-item">
+                            <h3>Passion</h3>
+                            <p>Made by gamers, for gamers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        GAMES SECTION
+        - Showcase of current and upcoming games
+        - Cards with hover effects
+    -->
+    <section id="games" class="games">
+        <div class="container">
+            <h2 class="section-title">Our Games</h2>
+            
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="assets/microwave-man/ground.png" alt="Microwave-Man! Game Screenshot">
+                    </div>
+                    <div class="game-info">
+                        <h3>Microwave-Man!</h3>
+                        <p>This is a platformer game about a Microwave Robot ascending the map to reach the top while collecting items to microwave.</p> 
+                        <div class="game-action">
+                            <a href="microwave-man.html" class="btn btn-primary">Play Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        CONTACT SECTION
+        - Links to social media
+        - Contact information
+    -->
+   <section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            <p class="lead">Follow us for updates!</p>
+            <div class="social-links">
+                <a href="https://github.com/titledgames" target="_blank" class="social-link">
+                    <svg width="32" height="32" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://dsc.gg/titledgames" target="_blank" class="social-link">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.128 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.106c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+    </svg>
+    <span>Discord</span>
+</a>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- 
+        FOOTER SECTION
+        - Copyright information
+        - Quick links
+        - Back to top button
+    -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo">
+                        <span class="logo-icon"><img id="footerLogoImage" src="assets/logos/light.png" width="50" height="50" alt="Titled Games Logo"></span>
+                        Titled Games
+                    </span>
+                    <p>We do games</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#games">Games</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Titled Games. All rights reserved.</p>
+                <p>
+                    <a href="https://github.com/titledgames" target="_blank">github.com/titledgames</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <!-- JavaScript for interactivity -->
+    <script src="script.js"></script>
+</body>
+</html>
